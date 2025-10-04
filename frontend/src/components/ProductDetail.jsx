@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, ShoppingCart, Heart, Star, Truck, Shield, RotateCcw } from 'lucide-react'
 import { useCart } from '../context/CartContext'
-import axios from 'axios'
+import api from '../config/api'
 import './ProductDetail.css'
 
 const ProductDetail = () => {
@@ -19,7 +19,7 @@ const ProductDetail = () => {
 
   const fetchProduct = async () => {
     try {
-      const response = await axios.get(`/api/products/${id}`)
+      const response = await api.get(`/api/products/${id}`)
       // Handle both direct object and wrapped response formats
       const productData = response.data.data || response.data
       setProduct(productData)
@@ -74,7 +74,7 @@ const ProductDetail = () => {
         <div className="product-image-section">
           <div className="main-image-container">
             <img
-              src={product.image || '/api/placeholder/500/400'}
+              src={product.image || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api/placeholder/500/400`}
               alt={product.name}
               className="main-image"
             />

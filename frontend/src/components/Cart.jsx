@@ -54,7 +54,7 @@ const Cart = () => {
             <div key={item._id} className="cart-item glass fade-in">
               <div className="item-image-container">
                 <img
-                  src={item.image || '/api/placeholder/100/100'}
+                  src={item.image || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api/placeholder/100/100`}
                   alt={item.name}
                   className="item-image"
                 />
