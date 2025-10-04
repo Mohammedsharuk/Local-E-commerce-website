@@ -1,0 +1,53 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.main-content {
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+/* Loading spinner */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error message */
+.error {
+  text-align: center;
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* Success message */
+.success {
+  text-align: center;
+  color: #4ecdc4;
+  background: rgba(78, 205, 196, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  border: 1px solid rgba(78, 205, 196, 0.3);
+}
